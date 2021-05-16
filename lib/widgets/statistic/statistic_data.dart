@@ -16,22 +16,40 @@ class StatisticData extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Text>[
-                    Text('Confirmed'),
-                    Text(statistic.confirmed.toString()),
+                    Text(
+                      'Confirmed',
+                      style: TextStyle(color: Colors.yellow[700]),
+                    ),
+                    Text(
+                      statistic.confirmed.toString(),
+                      style: TextStyle(color: Colors.yellow[700]),
+                    ),
                   ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Text>[
-                    Text('Deats'),
-                    Text(statistic.deaths.toString()),
+                    Text(
+                      'Deaths',
+                      style: const TextStyle(color: Colors.red),
+                    ),
+                    Text(
+                      statistic.deaths.toString(),
+                      style: const TextStyle(color: Colors.red),
+                    ),
                   ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Text>[
-                    Text('Recovered'),
-                    Text(statistic.recovered.toString()),
+                    Text(
+                      'Recovered',
+                      style: const TextStyle(color: Colors.green),
+                    ),
+                    Text(
+                      statistic.recovered.toString(),
+                      style: const TextStyle(color: Colors.green),
+                    ),
                   ],
                 ),
                 Row(

@@ -12,17 +12,26 @@ class MenuCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        navigate(context, route);
-      },
-      child: Card(
-        color: Colors.blue[100],
-        elevation: 3,
+    return Material(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+      ),
+      elevation: 5,
+      color: Theme.of(context).accentColor,
+      child: InkWell(
+        onTap: () {
+          navigate(context, route);
+        },
+        splashColor: Theme.of(context).primaryColor,
+        borderRadius: BorderRadius.circular(20),
         child: Container(
-          padding: EdgeInsets.all(10),
+          width: 130,
+          height: 100,
           child: Center(
-            child: Text(menuTitle),
+            child: Text(
+              menuTitle,
+              style: Theme.of(context).textTheme.headline6,
+            ),
           ),
         ),
       ),

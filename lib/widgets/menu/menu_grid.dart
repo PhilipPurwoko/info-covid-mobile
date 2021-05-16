@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
-import '../statistic/statistic_screen.dart';
 import './menu_card.dart';
+import '../statistic/statistic_screen.dart';
+import '../info/info_screen.dart';
 
 class MenuGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10),
-      child: GridView(
-        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: 200,
-          childAspectRatio: 3 / 2,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-        ),
+      color: Colors.white,
+      height: 150,
+      padding: EdgeInsets.all(20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <MenuCard>[
           MenuCard('Statistik', StatisticScreen.routeName),
-          MenuCard('Informasi', '/menu'),
-          MenuCard('Tentang Aplikasi', '/menu'),
+          MenuCard('Informasi', InfoScreen.routeName),
         ],
       ),
     );

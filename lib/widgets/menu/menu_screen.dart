@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './menu_grid.dart';
+import '../cegah/cegah.dart';
 
 class MenuScreen extends StatelessWidget {
   static String routeName = '/menu';
@@ -10,7 +11,10 @@ class MenuScreen extends StatelessWidget {
         title: Text('Info Covid'),
       ),
       body: SafeArea(
-        child: MenuGrid(),
+        child: ListView(children: <Widget>[
+          MenuGrid(),
+          Cegah(),
+        ]),
       ),
     );
   }

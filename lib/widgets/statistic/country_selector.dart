@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../models/country.dart';
 
-Container countrySelector(
-    String country, List<Country> countries, Function onChanged) {
+Container countrySelector(BuildContext context, String country,
+    List<Country> countries, Function onChanged) {
   return Container(
     child: Row(
       mainAxisAlignment: MainAxisAlignment.start,
@@ -17,11 +17,11 @@ Container countrySelector(
             icon: Text('Select Country'),
             iconSize: 24,
             elevation: 16,
-            style: TextStyle(color: ThemeData().accentColor),
+            style: TextStyle(color: Theme.of(context).primaryColor),
             onChanged: onChanged,
             underline: Container(
               height: 2,
-              color: ThemeData().accentColor,
+              color: Theme.of(context).primaryColor,
             ),
             items: countries != null
                 ? countries.map((Country country) {

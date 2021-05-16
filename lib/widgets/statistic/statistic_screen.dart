@@ -51,6 +51,7 @@ class _StatisticScreenState extends State<StatisticScreen> {
         child: Column(
           children: <Widget>[
             countrySelector(
+              context,
               country,
               countries,
               (String newCountry) => changeCountry(newCountry),
