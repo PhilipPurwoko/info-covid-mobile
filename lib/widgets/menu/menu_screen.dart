@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'menu_grid.dart';
+import './menu_grid.dart';
 
 class MenuScreen extends StatelessWidget {
   static String routeName = '/menu';

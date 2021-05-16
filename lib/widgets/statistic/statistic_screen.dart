@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../models/statistic.dart';
+import '../../models/country.dart';
+import './country_selector.dart';
+import './statistic_data.dart';
 
 class StatisticScreen extends StatefulWidget {
   static String routeName = '/statistic';
@@ -10,16 +13,30 @@ class StatisticScreen extends StatefulWidget {
 class _StatisticScreenState extends State<StatisticScreen> {
   String country = 'Indonesia';
   Statistic stat;
+  List<Country> countries;
 
-  void changeCountry() {
+  void changeCountry(String newCountry) {
     setState(() {
-      country = 'India';
+      country = newCountry;
+    });
+    getData();
+  }
+
+  void getData() async {
+    var updatedStat = await Statistic.getData(country);
+    setState(() {
+      stat = updatedStat;
     });
   }
 
-  void getData() {
-    setState(() async {
-      stat = await Statistic.getData(country);
+  @override
+  void initState() {
+    super.initState();
+    getData();
+    Country.getCountry().then((value) {
+      setState(() {
+        countries = value;
+      });
     });
   }
 
@@ -33,44 +50,12 @@ class _StatisticScreenState extends State<StatisticScreen> {
         padding: EdgeInsets.all(10),
         child: Column(
           children: <Widget>[
-            Container(
-              width: double.infinity,
-              // decoration: BoxDecoration(
-              //   border: Border.all(color: Colors.black, width: 3),
-              // ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: Text('Country : $country'),
-                  ),
-                  ElevatedButton(
-                    onPressed: changeCountry,
-                    child: Text('Change Country'),
-                  )
-                ],
-              ),
+            countrySelector(
+              country,
+              countries,
+              (String newCountry) => changeCountry(newCountry),
             ),
-            Container(
-              child: Column(
-                children: <Widget>[
-                  ElevatedButton(
-                    onPressed: getData,
-                    child: Text('Get Data'),
-                  ),
-                  stat != null
-                      ? Column(
-                          children: <Text>[
-                            Text('Confirmed : ${stat.confirmed}'),
-                            Text('Deats : ${stat.deaths}'),
-                            Text('Recovered : ${stat.recovered}'),
-                            Text('Last Update : ${stat.lastUpdate}'),
-                          ],
-                        )
-                      : Text('No Data'),
-                ],
-              ),
-            ),
+            StatisticData(stat),
           ],
         ),
       ),

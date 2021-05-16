@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../statistic/statistic_screen.dart';
-import 'menu_card.dart';
+import './menu_card.dart';
 
 class MenuGrid extends StatelessWidget {
   @override

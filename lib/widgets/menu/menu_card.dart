@@ -6,7 +6,7 @@ class MenuCard extends StatelessWidget {
 
   MenuCard(this.menuTitle, this.route);
 
-  void navigate(ctx, route) {
+  void navigate(BuildContext ctx, String route) {
     Navigator.pushNamed(ctx, route);
   }
 
