@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'menu_grid.dart';
 
 class MenuScreen extends StatelessWidget {
-  static String routeName = '/main-menu';
+  static String routeName = '/menu';
   @override
   Widget build(BuildContext context) {
     return Scaffold(

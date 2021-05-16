@@ -2,13 +2,20 @@ import 'package:flutter/material.dart';
 
 class MenuCard extends StatelessWidget {
   final String menuTitle;
-  
-  MenuCard(this.menuTitle);
+  final String route;
+
+  MenuCard(this.menuTitle, this.route);
+
+  void navigate(ctx, route) {
+    Navigator.pushNamed(ctx, route);
+  }
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        navigate(context, route);
+      },
       child: Card(
         color: Colors.blue[100],
         elevation: 3,

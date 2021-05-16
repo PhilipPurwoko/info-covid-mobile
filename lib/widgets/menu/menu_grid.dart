@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../statistic/statistic_screen.dart';
 import 'menu_card.dart';
 
 class MenuGrid extends StatelessWidget {
@@ -14,9 +15,9 @@ class MenuGrid extends StatelessWidget {
           mainAxisSpacing: 10,
         ),
         children: <MenuCard>[
-          MenuCard('Statistik'),
-          MenuCard('Informasi'),
-          MenuCard('Tentang Aplikasi'),
+          MenuCard('Statistik', StatisticScreen.routeName),
+          MenuCard('Informasi', '/menu'),
+          MenuCard('Tentang Aplikasi', '/menu'),
         ],
       ),
     );
