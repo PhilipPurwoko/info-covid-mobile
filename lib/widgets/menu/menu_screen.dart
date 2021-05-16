@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-class MainMenu extends StatelessWidget {
+import 'menu_grid.dart';
+
+class MenuScreen extends StatelessWidget {
   static String routeName = '/main-menu';
   @override
   Widget build(BuildContext context) {
@@ -9,11 +11,7 @@ class MainMenu extends StatelessWidget {
         title: Text('Info Covid'),
       ),
       body: SafeArea(
-        child: Container(
-          child: Center(
-            child: Text('Main Menu'),
-          ),
-        ),
+        child: MenuGrid(),
       ),
     );
   }
