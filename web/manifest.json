@@ -1,11 +1,11 @@
 {
-    "name": "info_covid",
-    "short_name": "info_covid",
+    "name": "Info Covid",
+    "short_name": "Info Covid",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Get Covid 19 information from your hand.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.info_covid">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="info_covid"
+        android:label="Info Covid"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
