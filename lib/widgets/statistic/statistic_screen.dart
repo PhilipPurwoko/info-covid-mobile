@@ -14,6 +14,10 @@ class _StatisticScreenState extends State<StatisticScreen> {
   String country = 'Indonesia';
   Statistic stat;
   List<Country> countries;
+  final TextStyle customStyle = TextStyle(
+    fontWeight: FontWeight.bold,
+    fontSize: 18,
+  );
 
   void changeCountry(String newCountry) {
     setState(() {
@@ -47,16 +51,17 @@ class _StatisticScreenState extends State<StatisticScreen> {
         title: Text('Statistic Covid'),
       ),
       body: Container(
-        padding: EdgeInsets.all(10),
+        padding: EdgeInsets.all(20),
         child: Column(
           children: <Widget>[
             countrySelector(
               context,
+              customStyle,
               country,
               countries,
               (String newCountry) => changeCountry(newCountry),
             ),
-            StatisticData(stat),
+            StatisticData(stat, customStyle),
           ],
         ),
       ),

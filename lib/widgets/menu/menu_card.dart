@@ -10,8 +10,20 @@ class MenuCard extends StatelessWidget {
     Navigator.pushNamed(ctx, route);
   }
 
+  double cardWidth(double width) {
+    double desiredWidth = 150;
+    if (width > 768) {
+      desiredWidth = 300;
+    } else if (width < 375) {
+      desiredWidth = 120;
+    }
+    return desiredWidth;
+  }
+
   @override
   Widget build(BuildContext context) {
+    final Size screenSize = MediaQuery.of(context).size;
+
     return Material(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),
@@ -25,7 +37,7 @@ class MenuCard extends StatelessWidget {
         splashColor: Theme.of(context).primaryColor,
         borderRadius: BorderRadius.circular(20),
         child: Container(
-          width: 130,
+          width: cardWidth(screenSize.width),
           height: 100,
           child: Center(
             child: Text(
